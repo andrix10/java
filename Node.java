@@ -4,7 +4,6 @@ public class Node<E>
 	E item;
 	Node<E> next;
 	Node<E> prev;
-	Node<E> first;
 
 	public Node( E item, Node<E> next, Node<E> prev ) 
 	{
@@ -12,29 +11,30 @@ public class Node<E>
 		this.next = next;
 		this.prev = prev;
 	}
-
+}
+/*
 	public void AddToBeg( E in ) 
 	{
 		Node<E> newH = new Node<E>( in, null, null );
-		first = newH;
+		current = newH;
 	}
 
 	public void Add( E in ) 
 	{
-		Node<E> temp = new Node<E>( in, null, first );
-		if ( first == null )
+		Node<E> temp = new Node<E>( in, null, head );
+		if ( head == null )
 		{
 			AddToBeg( in );
 		}
 		else 
 		{
-			Node<E> curN = first;
+			Node<E> curN = head;
 			while( curN.next != null ) 
 			{
 				curN = curN.next;
 			}
 			curN.next = temp;
-			first = curN;
+			head = curN;
 		}
 	}
 
@@ -46,5 +46,11 @@ public class Node<E>
 	public void Print()
 	{
 		System.out.println( "\nItem: " + item + "\n");
+		Node<E> temp = head;
+		while ( temp.next != null )
+		{
+			temp = temp.next;
+			System.out.println( "\nItem: " + temp.item + "\n");
+		}
 	}
-}
+}*/
