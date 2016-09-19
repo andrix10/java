@@ -1,8 +1,8 @@
 public class LinkedList<E>
 {
-    Node <E> head;
-    
-    public void AddToBeg( E in ) 
+	Node <E> head;
+
+	public void AddToBeg( E in ) 
 	{
 		Node<E> newH = new Node<E>( in, null, null );
 		head = newH;
@@ -35,10 +35,28 @@ public class LinkedList<E>
 	public void Print()
 	{
 		Node<E> temp = head;
+		System.out.println();
+		System.out.print("[ ");
 		while ( temp.prev != null )
 		{
-		    System.out.println( "\nItem: " + temp.item + "\n");
+			System.out.print( temp.item + " ");
 			temp = temp.prev;
 		}
+		System.out.println("]");
+	}
+
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+
+		Node<E> temp = head;
+		result.append("[ ");
+                while ( temp.prev != null )
+                {
+			result.append( temp.item.toString() + " ");
+                        temp = temp.prev;
+                }
+		result.append("]");
+		
+		return result.toString();
 	}
 }
